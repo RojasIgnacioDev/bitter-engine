@@ -14,7 +14,7 @@ public abstract class BitterEngine {
     private string Title = "Game";
     private Canvas Window;
     private Thread GameLoopThread;
-    
+    private Color BackgroundColor = Color.DimGray;
     protected int Frame = 0;
 
     public BitterEngine(Vector2 screenSize, string title) {
@@ -37,7 +37,7 @@ public abstract class BitterEngine {
     private void Renderer(object? sender, PaintEventArgs e)
     {
         Graphics g = e.Graphics;
-        g.Clear(Color.BlanchedAlmond);
+        g.Clear(this.BackgroundColor);
     }
 
     void MainGameLoop() {
